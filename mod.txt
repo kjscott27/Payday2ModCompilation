@@ -1,10 +1,9 @@
 {
-	"name": "ACHIEVEMENTS",
-	"description": "Achievements",
-	"author": "",
+	"name": "kJs Mode Menu",
+	"description": "kJs Mod Menu is a mod menu intended to provide a "PayDay2-MVP like" experience in PayDay2",
+	"author": "kJs",
 	"contact": "",
-	"version": "1.0",
-	"priority": 100,
+	"version": "0.1",
 	"blt_version" : 2,
 	"hooks": [
 		{
@@ -16,8 +15,8 @@
 	[
 		{ 	
 			"keybind_id" 	: "keybind_achievement",
-			"name"				: "kJs Hack Menu",
-			"description"	: "kJs Hack Menu key bind",
+			"name"				: "kJs Mod Menu",
+			"description"	: "kJs Mod Menu key bind",
 			"script_path"	: "code.lua",
 			"run_in_menu"	: true,
 			"run_in_game"	: true,
