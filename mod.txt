@@ -1,5 +1,5 @@
 {
-	"name": "kJs Mode Compilation",
+	"name": "kJs Mod Compilation",
 	"description": "kJs Mod Compilation is a group of mods from the community wrapped together to provide a 'PayDay2-MVP like' experience.",
 	"author": "kJs",
 	"contact": "",
