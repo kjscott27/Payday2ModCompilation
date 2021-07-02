@@ -1,23 +1,42 @@
 {
-	"name": "kJs Mode Menu",
-	"description": "kJs Mod Menu is a mod menu intended to provide a "PayDay2-MVP like" experience in PayDay2",
+	"name": "kJs Mode Compilation",
+	"description": "kJs Mod Compilation is a group of mods from the community wrapped together to provide a 'PayDay2-MVP like' experience.",
 	"author": "kJs",
 	"contact": "",
 	"version": "0.1",
 	"blt_version" : 2,
 	"hooks": [
-		{
-			"hook_id": "lib/managers/menumanager",
-			"script_path": "Achievement.lua"
+		{ 	
+			"hook_id": "lib/tweak_data/playertweakdata",
+			"script_path": "charspeed.lua"
+		},
+		{ 	
+			"hook_id": "lib/tweak_data/equipmentstweakdata",
+			"script_path": "charequip.lua"
+		},
+		{ 	
+			"hook_id": "lib/tweak_data/interactiontweakdata",
+			"script_path": "interactions.lua"
+		},
+		{ 	
+			"hook_id": "lib/tweak_data/playertweakdata",
+			"script_path": "player.lua"
+		},
+		{ 	
+			"hook_id" : "lib/tweak_data/missiondoortweakdata",
+			"script_path" : "drills.lua"
+		},
+		{ 	
+			"hook_id" : "lib/tweak_data/upgradestweakdata",
+			"script_path" : "god.lua"
 		}
 	],
-	"keybinds": 
-	[
+	"keybinds": [
 		{ 	
-			"keybind_id" 	: "keybind_achievement",
-			"name"				: "kJs Mod Menu",
+			"keybind_id" 	: "keybind_kjs_achievements",
+			"name"				: "kJs Mod (Achievements)",
 			"description"	: "kJs Mod Menu key bind",
-			"script_path"	: "code.lua",
+			"script_path"	: "achievements.lua",
 			"run_in_menu"	: true,
 			"run_in_game"	: true,
 			"localized"		: false
