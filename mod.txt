@@ -7,12 +7,12 @@
 	"blt_version" : 2,
 	"hooks": [
 		{ 	
-			"hook_id": "lib/tweak_data/playertweakdata",
-			"script_path": "charspeed.lua"
-		},
-		{ 	
 			"hook_id": "lib/tweak_data/equipmentstweakdata",
 			"script_path": "charequip.lua"
+		},
+		{ 	
+			"hook_id": "lib/tweak_data/skilltreetweakdata",
+			"script_path": "forceskills.lua"
 		},
 		{ 	
 			"hook_id": "lib/tweak_data/interactiontweakdata",
@@ -34,12 +34,21 @@
 	"keybinds": [
 		{ 	
 			"keybind_id" 	: "keybind_kjs_achievements",
-			"name"				: "kJs Mod (Achievements)",
-			"description"	: "kJs Mod Menu key bind",
+			"name"				: "kJs Mod (Achievements Menu)",
+			"description"	: "kJs Mod Compilation key bind",
 			"script_path"	: "achievements.lua",
 			"run_in_menu"	: true,
 			"run_in_game"	: true,
 			"localized"		: false
-		}
+		},
+		{ 	
+			"keybind_id" 	: "keybind_kjs_force_levels",
+			"name"				: "kJs Mod (Max Levels/Infamy)",
+			"description"	: "kJs Mod Compilation key bind",
+			"script_path"	: "forcelevel.lua",
+			"run_in_menu"	: true,
+			"run_in_game"	: true,
+			"localized"		: false
+		},
 	]
 }
