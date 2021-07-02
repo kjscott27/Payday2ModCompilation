@@ -2,6 +2,9 @@ local prev_upgd_init = UpgradesTweakData._init_pd2_values
  
 function UpgradesTweakData:_init_pd2_values(tweak_data)
   prev_upgd_init(self, tweak_data)
+	self.ecm_jammer_base_battery_life = 999999
+	self.ecm_jammer_base_low_battery_life = 999999
+	self.ecm_jammer_base_range = 999999
 	self.values.player.body_armor = {
 		armor = {
 			0,

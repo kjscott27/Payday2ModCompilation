@@ -32,7 +32,7 @@
 		}
 	],
 	"keybinds": [
-		{ 	
+		{
 			"keybind_id" 	: "keybind_kjs_achievements",
 			"name"				: "kJs Mod (Achievements Menu)",
 			"description"	: "kJs Mod Compilation key bind",
