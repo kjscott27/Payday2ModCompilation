@@ -33,8 +33,8 @@
 	],
 	"keybinds": [
 		{
-			"keybind_id" 	: "keybind_kjs_achievements",
-			"name"				: "kJs Mod (Achievements Menu)",
+			"keybind_id" 	: "keybind_kjs_menu",
+			"name"				: "kJs Mod Menu",
 			"description"	: "kJs Mod Compilation key bind",
 			"script_path"	: "achievements.lua",
 			"run_in_menu"	: true,

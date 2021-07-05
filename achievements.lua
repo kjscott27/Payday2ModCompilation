@@ -2,26 +2,17 @@
 	Achievement manager
 	Author: DvD
 	Menu based on Simple Menu by    @Harfatus
- 
-	Customize to your liking with these variables:
 --]]
  
 achs_per_menu = 15	-- How many achievements are shown per page, play around with this, depends on your resolution I think
- 
- 
---//-----------------------------------------------//--
- 
---//-----------------------------------------------//--
- 
- 
--- Menu class, mostly by    @Harfatus
+
 if not SimpleMenu then
     SimpleMenu = class()
  
     function SimpleMenu:init(m_id, title, message, options)		
         self.visible = false
 		self.is_main = m_id == 99999
-		self.dialog_data = { title = title, text = message, button_list = {}, id = "achmenu#"..m_id }
+		self.dialog_data = { title = title, text = message, button_list = {}, id = "kjmenu#"..m_id }
 		self.ids = {}
 		for _,opt in ipairs(options) do
 			if opt.data then self.ids[opt.text] = opt.data end
@@ -112,10 +103,7 @@ patched_update_input = patched_update_input or function (self, t, dt )
 end
 managers.system_menu.DIALOG_CLASS.update_input = patched_update_input
 managers.system_menu.GENERIC_DIALOG_CLASS.update_input = patched_update_input
- 
---//-----------------------------------------------//--
- 
--- Callback functions
+
 ach_callback = ach_callback or function(id, force)
 	if id == "-1" then
 		for id, ach in pairs(managers.achievment.achievments) do
@@ -194,10 +182,7 @@ ach_lastpage = ach_lastpage or function()
 	menu_index = menu_count
 	menus[menu_index]:show()
 end
- 
---//-----------------------------------------------//--
- 
--- Initial population of achievement list
+
 achievements = achievements or nil -- This is how you spell "achievements"    @overkill
 all_achievements = all_achievements or nil
 total_ach_count = 0
@@ -214,14 +199,12 @@ if not all_achievements then
 		end
 	end
 end
- 
---//-----------------------------------------------//--
- 
--- Population of menus
+
+
 menus = menus or nil
 menu_index = 1
 menu_count = menu_count or nil
- 
+
 function init_menus()
 	menus = {}
 	menu_count = math.ceil(#ach_keys / achs_per_menu)
@@ -241,26 +224,31 @@ function init_menus()
 		if m_id < menu_count then table.insert(opts, { text = "Last page", callback = ach_lastpage }) end
 		table.insert(opts, { text = "" })
 		table.insert(opts, { text = "Cancel", is_cancel_button = true })
-		
+
 		menus[m_id] = SimpleMenu:new(m_id, "Achievement manager (page "..tostring(m_id).."/"..tostring(menu_count)..")", "Click on an achievement to lock/unlock them", opts)
 	end
 end
- 
---//-----------------------------------------------//--
- 
--- Show the main menu
+
 main_menu = main_menu or nil
 if not main_menu then
 	local opts = {}
+	table.insert(opts, { text = "-----CHEAT TOGGLES----" })
+	table.insert(opts, { text = "Toggle god mode" })
+	table.insert(opts, { text = "" })
+	table.insert(opts, { text = "-----PLAYER OPTIONS----" })
+	table.insert(opts, { text = "Set level 100" })
+	table.insert(opts, { text = "Set infamy 100" })
+	table.insert(opts, { text = "" })
+	table.insert(opts, { text = "-----ACHIEVEMENTS----" })
 	table.insert(opts, { text = "Individual achievement manager (all)", callback = ach_individual, data = 1 })
 	table.insert(opts, { text = "Individual achievement manager (locked only)", callback = ach_individual, data = 2 })
 	table.insert(opts, { text = "Individual achievement manager (unlocked only)", callback = ach_individual, data = 3 })
 	table.insert(opts, { text = "" })
-	table.insert(opts, { text = "Unlock ALL achievements", callback = ach_all_activate })
-	table.insert(opts, { text = "Lock ALL achievements", callback = ach_all_deactivate })
+	table.insert(opts, { text = "Unlock ALL ("..total_ach_count.." total) achievements", callback = ach_all_activate })
+	table.insert(opts, { text = "Lock ALL ("..total_ach_count.." total) achievements", callback = ach_all_deactivate })
 	table.insert(opts, { text = "" })
 	table.insert(opts, { text = "Cancel", is_cancel_button = true })
-	main_menu = SimpleMenu:new(99999, "Achievement manager ("..total_ach_count.." total achievements)", "Choose an option", opts)
+	main_menu = SimpleMenu:new(99999, "kJs Mod Manager Menu", "Choose an option", opts)
 end
- 
+
 main_menu:show()
