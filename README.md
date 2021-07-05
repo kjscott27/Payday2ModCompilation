@@ -11,7 +11,7 @@ Provides the following modifications to the game:
 - God mode (uses a value for over 100% for dodge)
 - Instant interaction
 - Instant drills (the exception seems to be the Thermal Drill on Bank Heist, this drill is not instant)
-- Keybind option for max level and infamy
+- Keybind option for level 100 and 100 infamy 
 - Keybind option for an achievement lock/unlock menu
 - Infinite ECMs (this seems to work for only hosts)
 - 99 Cable ties
